@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Tutorial</title>
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+
+        .box {
+            height: 200px;
+            width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #9f9f9f;
+            color: white;
+            margin: 10px;
+        }
+
+        .fav {
+            border: 2px solid black;
+            padding: 15px;
+        }
+    </style>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <h2 class="heading">Welcome to Vue JS!</h2>
+    <div id="app">
+        <div class="book-store" v-if="showbooks">
+            <h4>Book List</h4>
+            <ul>
+                <li v-for="item in books" :class="{ fav: item.isFav }">
+                    <b>{{ item.title }}</b>
+                    <p>{{ item.isFav }}</p>
+                    <p>-by {{ item.author }}, price: {{ item.price }}</p>
+                    <button v-on:click="item.price++">Increase Price</button><br>
+                    <button @click="item.price--">Decrease Price</button>
+                    <button @click="setprice(item)">Set Book on Sale</button><br>
+                    <button @click="toggleFav(item)">
+                        <span v-if="item.isFav">Remove from Favourites</span>
+                        <span v-else>Add to Favourites</span>
+                    </button>
+                </li>
+            </ul>
+            <button @click="clickHandle">Click me</button>
+            <button @click="togglebook">
+                <span v-if="showbooks">Hide books</span>
+                <!-- <span v-if="!showbooks">Show books</span> -->
+                <span v-else>Show books</span>
+            </button><br>
+            <!-- <a v-bind:href="url" target="_blank" rel="noopener noreferrer">Open Vue</a> -->
+            <a :href="url" target="_blank" rel="noopener noreferrer">Open Vue</a><br>
+            <span v-show="showbooks">currently showing books</span>
+        </div>
+        <div class="mouse">
+            <div class="box" @mouseover="handleEvent">handle event</div>
+            <div class="box" @mouseleave="handleEvent($event, 5)">handle event</div>
+            <div class="box" @dblclick="handleEvent">handle event</div>
+            <div class="box" @mousemove="handleEvent">handle event</div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
