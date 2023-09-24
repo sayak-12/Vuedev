@@ -32,12 +32,11 @@
 <body>
     <h2 class="heading">Welcome to Vue JS!</h2>
     <div id="app">
-        <div class="book-store" v-if="showbooks">
+        <div class="book-store" >
             <h4>Book List</h4>
-            <ul>
+            <ul v-if="showbooks">
                 <li v-for="item in books" :class="{ fav: item.isFav }">
                     <b>{{ item.title }}</b>
-                    <p>{{ item.isFav }}</p>
                     <p>-by {{ item.author }}, price: {{ item.price }}</p>
                     <button v-on:click="item.price++">Increase Price</button><br>
                     <button @click="item.price--">Decrease Price</button>

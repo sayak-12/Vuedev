@@ -1,5 +1,5 @@
 const app = Vue.createApp({
-  // template: `<p class="para">lorem</p>`
+//   template: `<p class="para">lorem</p>`,
   data() {
     return {
         url: "https://vuejs.org/guide/quick-start.html#using-vue-from-cdn",
