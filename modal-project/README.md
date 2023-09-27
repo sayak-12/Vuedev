@@ -1,4 +1,4 @@
-# new-vue-app
+# modal-project
 
 ## Project setup
 ```
