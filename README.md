@@ -16,4 +16,4 @@ To get started with these Vue.js tutorials, follow these steps:
 1. **Clone the Repository**: Use the following command to clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/sayak-12/vue-tutorial.git
+   git clone https://github.com/sayak-12/Vuedev.git
