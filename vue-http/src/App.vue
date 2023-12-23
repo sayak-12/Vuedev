@@ -15,12 +15,12 @@ const fetchData = async () => {
   <div>
     <HelloWorld msg="Vite + Vue" />
     <button @click="fetchData">Fetch Data</button>
-    <p v-if="data">
+    <div v-if="data">
       <div v-for="result in data.results" :key="result in data.results">
         <p>{{result.email}}</p>
         <img :src="result.picture.thumbnail" alt="user pic">
       </div>
-    </p>
+    </div>
   </div>
 </template>
 
