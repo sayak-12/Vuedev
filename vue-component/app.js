@@ -9,6 +9,7 @@ const app = Vue.createApp({
         { title: "Gitobitan", author: "R.N.Thakur", price: "1000", isFav : true },
         { title: "A game of thrones", author: "George R R Martin", price: "2000", isFav : true },
       ],
+      inpText : "Initial value"
     };
   },
   methods: {
